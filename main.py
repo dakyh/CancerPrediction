@@ -16,7 +16,7 @@ else:
         st.error(f"Erreur lors du chargement du modèle : {e}")
 
     # Titre de l'application
-    st.title('Breast Cancer Prediction / Prédiction du Cancer du Sein Fait par khady Diagne et Ramatoulaye Merico')
+    st.title('Breast Cancer Prediction / Prédiction du Cancer du Sein')
 
     # Introduction
     st.write("""
@@ -48,9 +48,9 @@ else:
 
     # Collecte des entrées utilisateur
     input_data = []
-    for idx, feature in enumerate(feature_names):
-        value = st.number_input(f'{feature}', key=f'feature_{idx}', min_value=0.0, step=0.1)
-        input_data.append(value)
+    for feature in feature_names:
+        value = st.text_input(f'{feature}', value='0.0')
+        input_data.append(float(value))
 
     # Normalisation des données d'entrée
     scaler = StandardScaler()
