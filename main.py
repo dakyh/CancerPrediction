@@ -48,8 +48,8 @@ else:
 
     # Collecte des entrées utilisateur
     input_data = []
-    for feature in feature_names:
-        value = st.number_input(f'{feature}', min_value=0.0, step=0.1)
+    for idx, feature in enumerate(feature_names):
+        value = st.number_input(f'{feature}', key=f'feature_{idx}', min_value=0.0, step=0.1)
         input_data.append(value)
 
     # Normalisation des données d'entrée
